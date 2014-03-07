@@ -8,7 +8,7 @@ Work in progress
 1. Tag and attribute names should be lowercase, prefix your customized properties with "data-"
     
     ```
-    <div class="print-button" data-index="1">
+    <button type="button" class="print-button" data-index="1">Print</button>
     ```
 
 ## Follow HTML standard:
