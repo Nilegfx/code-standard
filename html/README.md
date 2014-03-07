@@ -8,7 +8,7 @@ Work in progress
 1. Tag and attribute names should be lowercase, prefix your customized properties with "data-"
     
     ```
-    <div class="branch-finder" data-dojo-type="hsbccmb/BranchFinder">
+    <div class="print-button" data-index="1">
     ```
 
 ## Follow HTML standard:
