@@ -2,7 +2,7 @@
 Work in progress
 
 ## Units, numbers
-1. No units for ```line-height```
+1. No units for `line-height`
 
     ```css
     p {
@@ -15,3 +15,17 @@ Work in progress
 
 2. Numbers should be divisible by 2, otherwise there will be pixel offset under different browsers.
 3. If the number is 0, no units should be provided, it's not neccessary.
+
+## Do not restate certain properties
+1. `display: block`:
+
+    ```css
+    li {
+        float: left;
+        display: block; /* unneccessary */
+    }
+    button {
+        position: absolute;
+        display: block; /* unneccessary */
+    }
+    ```
