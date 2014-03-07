@@ -1,7 +1,7 @@
 # JavaScript code standard
 Work in progress
 
-## 1. Naming convention:
+## Naming convention:
 
 Constructors: ```CapitalCase```
 
@@ -9,7 +9,7 @@ Constants: ```UPPER_CASE_WITH_UNDERSCORE```
 
 Everything else: ```camelCase```
 
-## 2. Style
+## Style
 
 1. Indentation:
 Configure your editor to insert 4 spaces when TAB key is pressed.
@@ -24,7 +24,7 @@ Required after statements such as ... ```if, switch, try, catch``` ... etc.
 > Always remember that JavaScript does NOT have block scope, only functions have scope.
 
 
-## 3. Do NOT use ...
+## Do NOT use ...
 
 No language is perfect, there are something you should avoid ...
 
