@@ -28,7 +28,7 @@ class, id names: ```lowercase-with-dash```
     the second line prevents MSIE works in legacy standard or quirks mode by default.
 
 ## Do NOT use ...:
-1. \<a\> tag with href filled with JavaScript codes to prevent default behavior, it violents the principle to seperate structure, presentation, and function. Bind an event in JavsScript to prevent default behavior, or better, use a <button> tag instead.
+1. \<a\> tag with href filled with JavaScript codes to prevent default behavior, it violents the principle to seperate structure, presentation, and function. Bind an event in JavsScript to prevent default behavior, or better, use a \<button\> tag instead.
     ```javascript
     function (evt) { evt.preventDefault(); }
     ```
