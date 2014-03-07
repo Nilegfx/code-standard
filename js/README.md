@@ -30,7 +30,7 @@ No language is perfect, there are something you should avoid ...
 
 1. ```eval()```
 2. ```with```
-3. ```==```: too many unexpected results.
+3. ```==```: too many unexpected results, use```===```instead.
 
     ```javascript
     '' == '0' // false
