@@ -2,7 +2,7 @@
 Work in progress
 
 ## Naming convention:
-class, id names: ```lowercase-with-dash```
+1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations.
 
 ## Style:
 1. Tag and attribute names should be lowercase, prefix your customized properties with "data-"
