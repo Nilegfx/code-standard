@@ -10,6 +10,9 @@ Work in progress
     ```
     <button type="button" class="print-button" data-index="1">Print</button>
     ```
+2. Use HTML tags instead of XHTML / XML
+
+    for example, `<br>` instead of `<br />`, there is no necessity to close tags since it's only a XML standard.
 
 ## Follow HTML standard:
 1. Doctype declaration, always use
@@ -29,9 +32,11 @@ Work in progress
 
 ## Do NOT use ...:
 1. \<a\> tag with href filled with JavaScript codes to prevent default behavior, it violents the principle to seperate structure, presentation, and function. Bind an event in JavsScript to prevent default behavior, or better, use a \<button\> tag instead.
+
     ```javascript
     function (evt) { evt.preventDefault(); }
     ```
+
     ```
     <button type="button">
     ```
