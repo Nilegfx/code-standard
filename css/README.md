@@ -13,8 +13,8 @@ Work in progress
     }
     ```
 
-2. Numbers should be divisible by 2, otherwise there will be pixel offset under different browsers.
-3. If the number is 0, no units should be provided, it's not neccessary.
+1. Numbers should be divisible by 2, otherwise there will be pixel offset under different browsers.
+1. If the number is 0, no units should be provided, it's not neccessary.
 
 ## Do not restate certain properties
 1. `display: block`:
@@ -29,3 +29,7 @@ Work in progress
         display: block; /* unneccessary */
     }
     ```
+
+## Best practices
+1. The way to clear float
+2. The way to center an element
