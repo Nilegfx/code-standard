@@ -2,7 +2,7 @@
 Work in progress
 
 ## Naming convention:
-1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations.
+1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations. Also it's better to avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed.
 
 ## Follow HTML standard:
 1. Tag and attribute names should be lowercase, prefix your customized properties with "data-"
