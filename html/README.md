@@ -4,23 +4,22 @@ Work in progress
 ## Naming convention:
 1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations.
 
-## Style:
+## Follow HTML standard:
 1. Tag and attribute names should be lowercase, prefix your customized properties with "data-"
     
     ```
     <button type="button" class="print-button" data-index="1">Print</button>
     ```
-2. Use HTML tags instead of XHTML / XML
+1. Use HTML tags instead of XHTML / XML
 
     for example, `<br>` instead of `<br />`, there is no necessity to close tags since it's only a XML standard.
 
-## Follow HTML standard:
 1. Doctype declaration, always use
     
     ```
     <!DOCTYPE html>
     ```
-2. First couple lines in the HEAD
+1. First couple lines in the HEAD
     
     ```
     <meta charset="UTF-8">
