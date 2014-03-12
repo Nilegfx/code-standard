@@ -1,6 +1,15 @@
 # CSS code standard
 Work in progress
 
+## Naming convention:
+1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations. 
+
+    > Also it's better to avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed. Try to describle by "What it is" not "How it looks like".
+    
+    > Only assign ID to an element if it's unique, assign same classes to items that share the same stylesheet rules.
+    
+    > There is also a attribute selector to match the start of dash seperated attribute value. `[attr|=value]`
+
 ## Units, numbers
 1. No units for `line-height`
 
