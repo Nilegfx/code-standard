@@ -11,8 +11,10 @@ Everything else: ```camelCase```
 
 ## Style
 
-1. Indentation:
-Configure your editor to insert 4 spaces when TAB key is pressed.
+1. Indentation: 4 spaces
+
+2. Comments: at least one line of short description is required, more lines or even comments following [JSDoc](http://usejsdoc.org/) rules will be appreciated.
+> Your code should be elegant, self-explanatory, not heavily relied on comments.
 
 2. Curly brackets:
 Required after statements such as ... ```if, switch, try, catch``` ... etc.
