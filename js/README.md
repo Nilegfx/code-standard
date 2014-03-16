@@ -110,8 +110,8 @@ No language is perfect, there are something you should avoid ...
 
 3. Prototypal
 
-    Instead of constructors, we can create an object, 
-    then link the prototype chain with another object.
+    Instead of the prototype chain between constructors,
+    we build upon an existing object, then customize it.
     
     ```javascript
     var myMammal = {
@@ -128,10 +128,48 @@ No language is perfect, there are something you should avoid ...
         F.prototype = myMammal;
         return new F();
     }());
+    myCat.name = 'Henrietta';
     ```
 
 4. Functional
+
+    > The functional pattern has a great deal of flexibility. 
+    > It requires less effort than the pseudoclassical pattern,
+    > and gives us better encapsulation and information hiding and access to super methods.
+
+
+    ```javascript
+    var mammal = function (privateObj, parentObj) {
+        // inherits with prototypal pattern
+        var newObj = (function () {
+            var F = function () {};
+            F.prototype = parentObj || {};
+            return new F();
+        }());
+        // getters to access private properties
+        newObj.getName = function ( ) {
+            return privateObj.name;
+        };
+        newObj.says = function ( ) {
+            return privateObj.saying || '';
+        };
+        return newObj;
+    };
+    var myMammal = mammal({name: 'Herb'});
+    ```
+
 5. Parts
+
+    Make objects out of parts.
+    
+    ```javascript
+    var addParts = function (privateObj, obj) {
+        obj.getName = function () { return privateObj.name };
+        return obj;
+    };
+
+    addParts({ ... });
+    ```
 
 ## Performance
 
