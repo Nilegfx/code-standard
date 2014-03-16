@@ -71,7 +71,67 @@ No language is perfect, there are something you should avoid ...
     "class" is a reserved word, the browsers with ECMAScript 3 standard will throw an error, but not the ones with ECMAScript 5 standard.
     
 
-## Object-oriented (prototype, constructor
+## Object-oriented (Thanks to Douglas Crockford)
+
+> Every object is linked to a prototype object from which it inherits properties.
+
+1. Pseudoclassical
+
+    ```javascript
+    var Mammal = function (name) {
+        this.name = name;
+    };
+    Mammal.prototype.getName = function ( ) {
+        return this.name;
+    };
+    Mammal.prototype.says = function ( ) {
+        return this.saying || '';
+    };
+    var myMammal = new Mammal('Herb the Mammal');
+    var Cat = function (name) {
+        this.name = name;
+        this.saying = 'meow';
+    };
+    // Replace Cat.prototype with a new instance of Mammal
+    Cat.prototype = new Mammal( );
+    ```
+
+2. Object Specifiers
+
+    This pattern is identical to pseudoclassical,
+    except replace the auguments of constructors with a single object,
+    this pattern can take the additional advantage when working with JSON.
+    
+    ```javascript
+    var Mammal = function (obj) {
+        this.name = obj.name;
+    };
+    ```
+
+3. Prototypal
+
+    Instead of constructors, we can create an object, 
+    then link the prototype chain with another object.
+    
+    ```javascript
+    var myMammal = {
+        name : 'Herb the Mammal',
+        getName : function ( ) {
+            return this.name;
+        },
+        says : function ( ) {
+            return this.saying || '';
+        }
+    };
+    var myCat = (function () {
+        var F = function () {};
+        F.prototype = myMammal;
+        return new F();
+    }());
+    ```
+
+4. Functional
+5. Parts
 
 ## Performance
 
@@ -109,3 +169,6 @@ No language is perfect, there are something you should avoid ...
     > Dojo.array.forEach(theArray, function (item, index) { ... });
     > ```
     
+3. Go test it!
+
+    When in doubt, [go test it!](http://jsperf.com/)
