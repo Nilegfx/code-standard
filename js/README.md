@@ -14,17 +14,20 @@ Everything else: ```camelCase```
 1. Indentation: 4 spaces
 
 2. Comments: at least one line of short description is required, more lines or even comments following [JSDoc](http://usejsdoc.org/) rules will be appreciated.
-> Your code should be elegant, self-explanatory, not heavily relied on comments.
+
+    > Your code should be elegant, self-explanatory, not heavily relied on comments.
 
 2. Curly brackets:
 Required after statements such as ... ```if, switch, try, catch``` ... etc.
-> For ```{```, place it at the end of the previous line, not the begining of the next line, to avoid wrong semicolon insertion causes misinterpretation of the program.
+
+    > For ```{```, place it at the end of the previous line,
+    > NOT the begining of the next line,
+    > to avoid wrong semicolon insertion causes misinterpretation of the program.
 
 3. Simecolons:Required.
 
 4. Var: required, declare all variables at the top of each function.
 > Always remember that JavaScript does NOT have block scope, only functions have scope.
-
 
 ## Do NOT use ...
 
@@ -66,3 +69,43 @@ No language is perfect, there are something you should avoid ...
     ```
 
     "class" is a reserved word, the browsers with ECMAScript 3 standard will throw an error, but not the ones with ECMAScript 5 standard.
+    
+
+## Object-oriented (prototype, constructor
+
+## Performance
+
+1. DOM manipulation
+
+    1. use `className` to apply styles instead of inline style rules;
+    2. manipulate less nodes the better;
+        
+        > for example, you want to change color of certain `<li>` elements,
+        > instead of assign new class names for each `<li>` element,
+        > assign a new class name for their parent `<ul>` or `<ol>` element,
+        > ```css
+        > .navigation-bar .button { color: #000; }
+        > .navigation-bar-alternative .button { color: #fff; }
+        > ```
+
+        > another example, if you want to show / hide certain elements,
+        > try `display: none`, or `visibility: hidden`,
+        > instead of insert / remove DOM nodes from the context.
+
+2. Loops
+
+    try `jQuery.each()` or `Dojo.array.forEach()` to loop through arrays,
+    not `for` or `while` without encapsulation,
+    not native ECMAScript 5 forEach which has terrible performance at least for now.
+    
+    > the reason behind this is one terrible thing about JavaScript, no block context,
+    > ```javascript
+    > var index = 0, item;
+    > for (index; item = array[index]; index++) { fn(item); ... }
+    > ```
+    > `index` and `item` here is going to pollute the function context this `for` loop is in,
+    > but encapsulated functions solves this problem by introducing a lambda function to contain these variables.
+    > ```javascript
+    > Dojo.array.forEach(theArray, function (item, index) { ... });
+    > ```
+    
