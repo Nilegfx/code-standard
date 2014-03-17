@@ -2,22 +2,49 @@
 Work in progress
 
 ## General Guidelines 
-1. Include a commented link at the top of the stylesheets back to the coding standards document
-2. When minifing a CSS, include a commented link at the top to view the unminified CSS
-3. 
+* Include a commented link at the top of the stylesheets back to the coding standards document
+* When minifing a CSS, include a commented link at the top to view the unminified CSS
 
 ## Naming convention:
-1. Class, ID names: `lowercase-with-dash`, try to describle it clearly without abbreviations. 
+* Use lowercase and dashes for Class, ID names.
 
-    > Also it's better to avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed. Try to describle by "What it is" not "How it looks like".
-    
-    > Avoid using IDs for styling. IDs are great for anchor links and JS hooks, but avoid using them as styling hooks.
-    
-    > There is also a attribute selector to match the start of dash seperated attribute value. `[attr|=value]`
-
-2.Avoid qualifying class names with type selectors
 ```css
-.nav {...} instead of ul.nav {...}
+ .lowercase-with-dash {...} /*recommended*/ 
+ 
+ .Capital-with-dash {...} /*not recommended*/ 
+ #CapitalCaseClassOrId {...} /*not recommended*/ 
+ #ID_NAME {...} /*not recommended*/ 
+```
+* try to describle it clearly without abbreviations. avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed. Try to describle by "What it is" not "How it looks like"
+
+```css
+.main-title-heading {...} /*recommended*/
+
+.blue-bold-heading {...} /*not recommended*/ 
+```
+
+* Avoid using IDs for styling. IDs are great for anchor links and JS hooks, but avoid using them as styling hooks.
+
+```css
+#title {color: green;} /*not recommended*/ 
+
+/*not recommended*/ 
+#title {
+  background-image: url("path/to/image.jpg");
+  text-decoration: underline;
+}
+```
+
+* There is also a attribute selector to match the start of dash seperated attribute value. `[attr|=value]`
+
+* Avoid qualifying class names with type selectors. you may want to apply it in a different element
+
+```css
+.nav {...}/*recommended*/ 
+.important {...} /*recommended*/ 
+
+ul.nav {...} /*not recommended*/
+span.important {...} /*not recommended*/
 ```
 
 ## Formatting CSS
@@ -38,7 +65,7 @@ Work in progress
 .success {color: #468847;}
 ```
 
-* Place closing bracket of declaration block on its own line
+* Place opening bracket of declaration block in the same line with the declaration and place the closing bracket of declaration block on its own "separate" line
 
 ```css
 /*recommended*/
@@ -55,6 +82,11 @@ Work in progress
   border-color: #d6e9c6;
   color: #468847;
 }
+  
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;}
 ```
 
 * Add one blank line bewteen rule sets
