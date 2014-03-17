@@ -5,7 +5,7 @@ Work in progress
 * Include a commented link at the top of the stylesheets back to the coding standards document
 * Use expanded styles for development and compressed styles for production
 
-**development phase**
+**Development phase**
 ```css
 .success {
   background-color: #dff0d8;
@@ -37,7 +37,7 @@ Work in progress
  #CapitalCaseClassOrId {...} /*not recommended*/ 
  #ID_NAME {...} /*not recommended*/ 
 ```
-* try to describle it clearly without abbreviations. avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed. Try to describle by "What it is" not "How it looks like"
+* Try to describle it clearly without abbreviations. avoid names like `blue-bold-heading`, leave the defination of styles out of names, otherwise you may need to change it afterward when styles changed. Try to describle by "What it is" not "How it looks like"
 
 ```css
 .main-title-heading {...} /*recommended*/
@@ -364,5 +364,46 @@ audio:not([controls]) {
 ## 
 
 ## Best practices
-1. The way to clear float
-2. The way to center an element
+* Create a class called `clearfix` with the following styles and attached it to any parent that has a floated children
+
+```css
+/*
+ * Read more about this approach 
+ * http://css-tricks.com/all-about-floats/
+*/
+.clearfix {*zoom: 1;} /* Fix for IE <7 */
+
+/*Fix for modern browsers*/
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+```
+
+**HTML Usage**
+```html
+<div class="module-name clearfix">
+  <div class"module-name-child-floated-left">...</div>
+  <div class"module-name-child-floated-right">...</div>
+</div>
+```
+
+* Centering elements by giving it `auto` horizontal margins
+
+```css
+.centered-element {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*or*/
+.centered-element {margin: 0 auto;} /*0 just for demonstration. it indicates top and bottom margin, */
+```
+
+* Do not use `!important` declarations unless you really have to do so
+
+ 
+
