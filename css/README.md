@@ -181,7 +181,113 @@ a {font-weight: Bold;}/*not recommended*/
 ```
 
 ## Comments & Documentation
-* 
+
+* Place comments on a new line above their subject.
+
+```css
+/* Resetting the HTML elements for a cross-browser compatibility */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+```
+
+* Keep line-length to a sensible maximum, e.g., 80 columns.
+
+**recommended**
+```css 
+/* 
+ * The first sentence of the long description starts here and continues on
+ * this line for a while finally concluding here at the end of this paragraph. 
+*/
+```
+
+**not recommended**
+```css 
+/* 
+ The first sentence of the long description starts here and continues on this line for a while finally concluding here at the end of this paragraph. 
+*/
+```
+
+* Create a comment for each main section, base, layout, modules, and state
+
+```css 
+/* -----------------------------------------------------------
+ Section comment block
+----------------------------------------------------------- */
+```
+
+
+* Create comments for sub-sections and add 3 lines before when they follow styles
+**recommended**
+
+```css 
+.icon_red_douple_uparrow {
+  background-position: 0 -98px;
+  height: 11px;
+  width: 9px;
+}
+
+.icon_red_downarrow {
+  background-position: 0 -556px;
+  height: 7px;
+  width: 9px;
+}
+
+.icon_red_leftarrow {
+  background-position: 0 -279px;
+  height: 10px;
+  width: 7px;
+}
+
+
+
+/* ------- Sub-section comment block ------- */
+```
+
+**not recommended**
+
+```css 
+.icon_red_douple_uparrow {
+  background-position: 0 -98px;
+  height: 11px;
+  width: 9px;
+}
+
+.icon_red_downarrow {
+  background-position: 0 -556px;
+  height: 7px;
+  width: 9px;
+}
+
+.icon_red_leftarrow {
+  background-position: 0 -279px;
+  height: 10px;
+  width: 7px;
+}
+/* ------- Sub-section comment block ------- */
+```
 
 
 ## Units, numbers
