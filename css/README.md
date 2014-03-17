@@ -5,7 +5,7 @@ Work in progress
 * Include a commented link at the top of the stylesheets back to the coding standards document
 * When minifing a CSS, include a commented link at the top to view the unminified CSS
 
-## Naming convention:
+## Naming convention
 * Use lowercase and dashes for Class, ID names.
 
 ```css
@@ -47,9 +47,18 @@ ul.nav {...} /*not recommended*/
 span.important {...} /*not recommended*/
 ```
 
+* Prefix states classes with `is-` for more meaningful naming
+
+```css
+.is-hidden {...}/*recommended*/ 
+.is-collapsed {...} /*recommended*/ 
+
+.hidden {...} /*not recommended*/
+.collapsed {...} /*not recommended*/
+```
+
 ## Formatting CSS
 * Use soft-tabs with 2 space indent.
-* Add a single space before the opening bracket `{` in rule sets.
 * Separate selectors and declarations by new lines for multi-lined properties.
 
 **Multi-lined**
@@ -65,6 +74,7 @@ span.important {...} /*not recommended*/
 .success {color: #468847;}
 ```
 
+* Add a single space before the opening bracket `{` in rule sets.
 * Place opening bracket of declaration block in the same line with the declaration and place the closing bracket of declaration block on its own "separate" line
 
 ```css
@@ -169,6 +179,10 @@ a {font-weight: Bold;}/*not recommended*/
 
 .selector {font-size: 0.8em;}/*not recommended*/
 ```
+
+## Comments & Documentation
+* 
+
 
 ## Units, numbers
 1. No units for `line-height`
