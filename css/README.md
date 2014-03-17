@@ -69,7 +69,7 @@ ul.nav {...} /*not recommended*/
 span.important {...} /*not recommended*/
 ```
 
-* Prefix states classes with `is-` for more meaningful naming
+* Prefix status classes with is-` for more meaningful naming
 
 ```css
 .is-hidden {...}/*recommended*/ 
@@ -404,6 +404,11 @@ audio:not([controls]) {
 ```
 
 * Do not use `!important` declarations unless you really have to do so
+* Normalize your main anchor declaration by setting all anchor statuses `normal, hover, active and focus`
 
- 
-
+```css
+a {...}
+a:hover {...}
+a:active {...}
+a:focus {...}
+```
