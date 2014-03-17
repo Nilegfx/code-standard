@@ -38,6 +38,55 @@ Work in progress
 .success {color: #468847;}
 ```
 
+* Place closing bracket of declaration block on its own line
+
+```css
+/*recommended*/
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+
+/*not recommended*/
+.success 
+{
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+```
+
+* Add one blank line bewteen rule sets
+
+```css
+/*recommended*/
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+
+.error {
+  background-color: #ecc7c7;
+  border-color: #db0011;
+  color: #468847;
+}
+
+/*not recommended*/
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+.error {
+  background-color: #ecc7c7;
+  border-color: #db0011;
+  color: #468847;
+}
+
+```
+
 * Add a space between properties and values after the colon `:`
 ```css
 .success {color: #468847;} /*recommended*/
