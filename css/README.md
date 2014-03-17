@@ -213,6 +213,24 @@ audio:not([controls]) {
 
 ```
 
+* Comment any illogical "for others developers", unnecessary or css hacks properties/declarations describing why you did that, and include a link for an article or detailed fix steps if any.
+
+```css
+.entry-featured {
+  *display: inline; /* IE7 and lower fix */
+  *zoom: 1; /* IE7 and lower fix */
+}
+
+/* IE7 and lower to force the element to hasLayout 
+ * http://stackoverflow.com/a/1794381
+*/
+.gain-haslayout {
+  *zoom: 1; 
+  *position: relative; 
+}
+
+```
+
 * Keep line-length to a sensible maximum, e.g., 80 columns.
 
 **recommended**
