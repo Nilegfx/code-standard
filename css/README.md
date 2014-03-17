@@ -14,7 +14,81 @@ Work in progress
     > Avoid using IDs for styling. IDs are great for anchor links and JS hooks, but avoid using them as styling hooks.
     
     > There is also a attribute selector to match the start of dash seperated attribute value. `[attr|=value]`
-i
+
+2.Avoid qualifying class names with type selectors
+```css
+.nav {...} instead of ul.nav {...}
+```
+
+## Formatting CSS
+* Use soft-tabs with 2 space indent.
+* Add a single space before the opening bracket `{` in rule sets.
+* Separate selectors and declarations by new lines for multi-lined properties.
+
+**Multi-lined**
+```css
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+```
+**single line**
+```css
+.success {color: #468847;}
+```
+
+* Add a space between properties and values after the colon `:`
+```css
+.success {color: #468847;} /*recommended*/
+.success {color:#468847;} /*not recommended*/
+```
+
+* Include a semi-colon after every declaration, including the last declaration
+
+```css
+/*recommended*/
+.selector {
+  color: #468847;
+  background: #db0011;
+}
+
+/*not recommended*/
+.selector {color: #468847}
+
+/*not recommended*/
+.selector {
+  color: #468847;
+  background: #db0011
+}
+```
+
+* Use quotes when needed in selctors or values, prefer double quotes. `input[type="checkbox"]` 
+
+```css
+input[type="checkbox"] {...} /*recommended*/
+
+input[type=checkbox] {...} /*not recommended*/
+```
+
+* Use lowercase format for property and value names
+
+```css
+a {font-weight: bold;} /*recommended*/
+
+a {FONT-WEIGHT: bold;}/*not recommended*/
+a {font-weight: BOLD;}/*not recommended*/
+a {font-weight: Bold;}/*not recommended*/
+
+```
+* Omit leading `0`s in values.
+
+```css
+.selector {font-size: .8em;} /*recommended*/
+
+.selector {font-size: 0.8em;}/*not recommended*/
+```
+
 ## Units, numbers
 1. No units for `line-height`
 
