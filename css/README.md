@@ -3,6 +3,28 @@ Work in progress
 
 ## General Guidelines 
 * Include a commented link at the top of the stylesheets back to the coding standards document
+* Use expanded styles for development and compressed styles for production
+
+**development phase**
+```css
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+
+.error {
+  background-color: #ecc7c7;
+  border-color: #db0011;
+  color: #468847;
+}
+```
+
+**Production phase**
+```css
+.success {background-color: #dff0d8;border-color: #d6e9c6;color: #468847;}.error {background-color: #ecc7c7;border-color: #db0011;color: #468847;}
+```
+
 * When minifing a CSS, include a commented link at the top to view the unminified CSS
 
 ## Naming convention
@@ -92,7 +114,8 @@ span.important {...} /*not recommended*/
   border-color: #d6e9c6;
   color: #468847;
 }
-  
+
+/*not recommended*/
 .success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
@@ -337,6 +360,8 @@ audio:not([controls]) {
         display: block; /* unneccessary */
     }
     ```
+
+## 
 
 ## Best practices
 1. The way to clear float
