@@ -193,18 +193,18 @@ No language is perfect, there are something you should avoid ...
 2. Loops
 
     try `jQuery.each()` or `Dojo.array.forEach()` to loop through arrays,
-    not `for` or `while` without encapsulation,
-    not native ECMAScript 5 forEach which has terrible performance at least for now.
+    not native ECMAScript 5 forEach which has terrible performance at this moment.
     
+    > Also you may want to encapsulate `for` when you are coding without framework,
     > the reason behind this is one terrible thing about JavaScript, no block context,
     > ```javascript
     > var index = 0, item;
     > for (index; item = array[index]; index++) { fn(item); ... }
     > ```
     > `index` and `item` here is going to pollute the function context this `for` loop is in,
-    > but encapsulated functions solves this problem by introducing a lambda function to contain these variables.
+    > encapsulated functions solves this problem by introducing a lambda function to contain these variables.
     > ```javascript
-    > Dojo.array.forEach(theArray, function (item, index) { ... });
+    > jQuery.each(theArray, function (index, value) { ... });
     > ```
     
 3. Go test it!
