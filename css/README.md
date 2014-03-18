@@ -285,19 +285,19 @@ audio:not([controls]) {
 **recommended**
 
 ```css 
-.icon_red_douple_uparrow {
+.icon-uparrow {
   background-position: 0 -98px;
   height: 11px;
   width: 9px;
 }
 
-.icon_red_downarrow {
+.icon-downarrow {
   background-position: 0 -556px;
   height: 7px;
   width: 9px;
 }
 
-.icon_red_leftarrow {
+.icon-leftarrow {
   background-position: 0 -279px;
   height: 10px;
   width: 7px;
