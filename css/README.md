@@ -246,7 +246,7 @@ audio:not([controls]) {
 
 /* IE7 and lower to force the element to hasLayout 
  * http://stackoverflow.com/a/1794381
-*/
+ */
 .gain-haslayout {
   *zoom: 1; 
   *position: relative; 
@@ -261,7 +261,7 @@ audio:not([controls]) {
 /* 
  * The first sentence of the long description starts here and continues on
  * this line for a while finally concluding here at the end of this paragraph. 
-*/
+ */
 ```
 
 **not recommended**
@@ -311,19 +311,19 @@ audio:not([controls]) {
 **not recommended**
 
 ```css 
-.icon_red_douple_uparrow {
+.icon-uparrow {
   background-position: 0 -98px;
   height: 11px;
   width: 9px;
 }
 
-.icon_red_downarrow {
+.icon-downarrow {
   background-position: 0 -556px;
   height: 7px;
   width: 9px;
 }
 
-.icon_red_leftarrow {
+.icon-leftarrow {
   background-position: 0 -279px;
   height: 10px;
   width: 7px;
@@ -369,25 +369,40 @@ audio:not([controls]) {
 ```css
 /*
  * Read more about this approach 
- * http://css-tricks.com/all-about-floats/
-*/
-.clearfix {*zoom: 1;} /* Fix for IE <7 */
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 
-/*Fix for modern browsers*/
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
 }
 ```
 
 **HTML Usage**
 ```html
 <div class="module-name clearfix">
-  <div class"module-name-child-floated-left">...</div>
-  <div class"module-name-child-floated-right">...</div>
+  <div class="module-name-child-floated-left">...</div>
+  <div class="module-name-child-floated-right">...</div>
 </div>
 ```
 
